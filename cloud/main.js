@@ -10,6 +10,11 @@ Parse.Cloud.define('register', function (req, res) {
 		user.email = req.params.email;
 		user.password = req.params.password; //todo improve
 		user.username = req.params.username;
+		user.save(null,{
+			success:function(current){
+				console.log("OK");
+			}
+		});
 		user.emailVerified = true;
 		res.success(true);
 	} catch (e) {
