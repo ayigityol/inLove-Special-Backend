@@ -4,16 +4,16 @@ Parse.Cloud.define('hello', function (req, res) {
 });
 
 Parse.Cloud.define('register', function (req, res) {
-
+	
 	try {
 		var user = new Parse.User();
 		user.email = req.params.email;
 		user.password = req.params.password; //todo improve
 		user.username = req.params.username;
 		user.emailVerified = true;
-		res.send(true);
+		res.success(true);
 	} catch (e) {
-		res.send(false);
+		res.success(false);
 	}
 	/*
 	var query = new Parse.Query("Trip");
