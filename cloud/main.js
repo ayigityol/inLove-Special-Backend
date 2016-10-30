@@ -4,7 +4,7 @@ Parse.Cloud.define('hello', function (req, res) {
 });
 
 Parse.Cloud.define('register', function (req, res) {
-	
+	console.log("Register!"); 
 	try {
 		var user = new Parse.User();
 		user.set("email", req.params.email);
