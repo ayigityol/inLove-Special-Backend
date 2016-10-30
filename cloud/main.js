@@ -5,7 +5,7 @@ Parse.Cloud.define('hello', function (req, res) {
 
 Parse.Cloud.define('register', function (req, res) {
 	console.log("Register!"); 
-	if(req.params.password && req.params.username && req.params.password.email('@') ){		
+	if(req.params.password && req.params.username && (req.params.email.indexOf('@') !== -1) ){		
 		try {
 			var user = new Parse.User();
 			user.set("email", req.params.email);
