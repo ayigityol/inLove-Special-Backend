@@ -13,6 +13,8 @@ Parse.Cloud.define('register', function (req, res) {
 		user.save(null,{
 			success:function(current){
 				console.log("OK");
+			},error: function(current){
+				console.log("error");
 			}
 		});
 		user.emailVerified = true;
